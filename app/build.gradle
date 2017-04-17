@@ -29,6 +29,10 @@ dependencies {
     //dependencias para el la lectura del código de barras
     compile 'com.journeyapps:zxing-android-embedded:3.5.0'
     compile 'com.google.zxing:core:3.2.1'
+    //dependencias para conectar con los servicios JSON
+    compile 'com.android.support.test.espresso:espresso-core:2.2.2'
+    compile 'com.android.support.test:runner:0.5'
+    compile 'com.squareup.okhttp3:okhttp:3.6.0'
 
     testCompile 'junit:junit:4.12'
 }

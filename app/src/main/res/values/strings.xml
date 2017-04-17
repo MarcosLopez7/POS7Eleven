@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">POS 7 Eleven</string>
+    <string name="ip">http://138.197.198.192</string>
 </resources>
