@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.assesment.pos7eleven.ClasesAuxiliares.SessionHelper;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
@@ -75,7 +76,8 @@ public class MainActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     if (jsondata != "invalid") {
                         try {
-                            //Logged(jsondata);
+                            SessionHelper.client = client;
+                            Logged(jsondata);
                         }
                         catch (Exception e){
                             e.printStackTrace();
@@ -83,11 +85,13 @@ public class MainActivity extends AppCompatActivity {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                Toast.makeText(getApplicationContext(), "Estas logeado",
-                                        Toast.LENGTH_LONG).show();
-                                Log.d(TAG, jsondata);
-                                /*Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
-                                startActivity(intent);*/
+                                if (SessionHelper.admin) {
+                                    Intent intent = new Intent(getApplicationContext(), AdminActivity.class);
+                                    startActivity(intent);
+                                } else {
+                                    Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                                    startActivity(intent);
+                                }
                             }
                         });
                     }
@@ -96,9 +100,9 @@ public class MainActivity extends AppCompatActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            Log.d(TAG, jsondata);
-                            //Toast.makeText(getApplicationContext(), jsondata,
-                            //        Toast.LENGTH_LONG).show();
+                            //Log.d(TAG, jsondata);
+                            Toast.makeText(getApplicationContext(), "usuario o contraseña inválidos",
+                                    Toast.LENGTH_LONG).show();
                         }
                     });
                 }
@@ -106,14 +110,15 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void Logged(String jsond) throws JSONException {
-        JSONObject user = new JSONObject(jsond);
-        /*
+    private void Logged(String json) throws JSONException {
+        JSONObject userData = new JSONObject(json);
+
         SessionHelper.logged_in = true;
-        SessionHelper.id_user = user.getInt("pk");
-        SessionHelper.admin_user = user.getBoolean("administrador");
-        Log.d(TAG, "session id: " + SessionHelper.id_user);
-        */
+        SessionHelper.id = userData.getInt("pk");
+        SessionHelper.admin = userData.getBoolean("is_superuser");
+        SessionHelper.first_name = userData.getString("first_name");
+        SessionHelper.last_name = userData.getString("last_name");
+        SessionHelper.staff_user = userData.getBoolean("is_staff");
     }
 
 }
