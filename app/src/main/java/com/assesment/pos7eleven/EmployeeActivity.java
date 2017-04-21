@@ -33,6 +33,7 @@ public class EmployeeActivity extends AppCompatActivity {
     private Button editButtont;
     private int pk;
     private static final String URL_PATH = "/pos/employee/";
+    private static final String URL_PATH_DELETE = "/pos/deleteemployee/";
     private static final String TAG = EmployeeActivity.class.getSimpleName();
 
     @Override
@@ -64,7 +65,35 @@ public class EmployeeActivity extends AppCompatActivity {
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                deleteUser();
+            }
+        });
+    }
 
+    private void deleteUser() {
+        Request request = new Request.Builder().
+                url(getString(R.string.ip) + URL_PATH_DELETE + pk + '/')
+                .delete()
+                .build();
+
+        SessionHelper.client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                e.printStackTrace();
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                //final String jsondata = response.body().string();
+                if (response.isSuccessful()){
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Intent intent = new Intent(getApplicationContext(), AdminActivity.class);
+                            startActivity(intent);
+                        }
+                    });
+                }
             }
         });
     }
@@ -92,7 +121,8 @@ public class EmployeeActivity extends AppCompatActivity {
     }
 
     private void init() {
-        Request request = new Request.Builder().url(getString(R.string.ip) + URL_PATH + pk + '/').build();
+        Request request = new Request.Builder().url(getString(R.string.ip) + URL_PATH + pk + '/')
+                .build();
         SessionHelper.client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
