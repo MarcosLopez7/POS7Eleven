@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.assesment.pos7eleven.ClasesAuxiliares.SessionHelper;
 
@@ -58,7 +59,9 @@ public class EmployeeActivity extends AppCompatActivity {
         editButtont.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(getApplicationContext(), EditEmployeeActivity.class);
+                intent.putExtra(getString(R.string.pk), pk);
+                startActivity(intent);
             }
         });
 
@@ -89,6 +92,8 @@ public class EmployeeActivity extends AppCompatActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
+                            Toast.makeText(getApplicationContext(), "Empleado eliminado",
+                                    Toast.LENGTH_LONG).show();
                             Intent intent = new Intent(getApplicationContext(), AdminActivity.class);
                             startActivity(intent);
                         }

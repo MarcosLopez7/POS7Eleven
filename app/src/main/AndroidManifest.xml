@@ -22,7 +22,8 @@
         <activity android:name=".HomeActivity" />
         <activity android:name=".AdminActivity" />
         <activity android:name=".CreateEmployeeActivity" />
-        <activity android:name=".EmployeeActivity"></activity>
+        <activity android:name=".EmployeeActivity" />
+        <activity android:name=".EditEmployeeActivity" />
     </application>
 
 </manifest>

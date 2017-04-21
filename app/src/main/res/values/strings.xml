@@ -5,5 +5,9 @@
         <item>Gerente</item>
         <item>Empleado</item>
     </string-array>
+    <string-array name="back_position">
+        <item>Empleado</item>
+        <item>Gerente</item>
+    </string-array>
     <string name="pk">pk</string>
 </resources>
