@@ -2,10 +2,12 @@ package com.assesment.pos7eleven;
 
 import android.app.DownloadManager;
 import android.app.VoiceInteractor;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -30,6 +32,7 @@ public class AdminActivity extends AppCompatActivity {
     private TextView lastnameTV;
     private ListView userListView;
     private TextView noresTV;
+    private Button createButton;
     private ArrayList<ArrayList<String>> items;
     private static final String TAG = AdminActivity.class.getSimpleName();
     private static final String URL_PATH = "/pos/admin/";
@@ -43,11 +46,20 @@ public class AdminActivity extends AppCompatActivity {
         lastnameTV = (TextView) findViewById(R.id.lastnameTV);
         userListView = (ListView) findViewById(R.id.listViewAdmin);
         noresTV = (TextView) findViewById(R.id.noresTV);
+        createButton = (Button) findViewById(R.id.createButton);
 
         nameTV.setText(SessionHelper.first_name);
         lastnameTV.setText(SessionHelper.last_name);
 
         init();
+
+        createButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), CreateEmployeeActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void setList(String data) throws JSONException {

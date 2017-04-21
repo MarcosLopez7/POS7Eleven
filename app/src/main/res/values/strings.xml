@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">POS 7 Eleven</string>
-    <string name="ip">http://138.197.198.192</string>
+    <string name="ip">http://104.131.134.15</string>
+    <string-array name="position">
+        <item>Gerente</item>
+        <item>Empleado</item>
+    </string-array>
 </resources>
