@@ -5,4 +5,5 @@
         <item>Gerente</item>
         <item>Empleado</item>
     </string-array>
+    <string name="pk">pk</string>
 </resources>
