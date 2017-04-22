@@ -42,7 +42,7 @@ public class UserCustomAdapter extends BaseAdapter {
 
     @Override
     public long getItemId(int position) {
-        return position;
+        return Long.parseLong(users.get(position).get(4)) ;
     }
 
     @NonNull

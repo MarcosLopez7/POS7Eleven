@@ -52,7 +52,7 @@ public class EmployeeActivity extends AppCompatActivity {
         editButtont = (Button) findViewById(R.id.editEmployeeButton);
 
         Intent intent = getIntent();
-        pk = intent.getIntExtra(getString(R.string.pk), 1) + 1;
+        pk = intent.getIntExtra(getString(R.string.pk), 1);
 
         init();
 

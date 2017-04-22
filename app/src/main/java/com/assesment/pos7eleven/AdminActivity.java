@@ -5,6 +5,7 @@ import android.app.VoiceInteractor;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -82,6 +83,7 @@ public class AdminActivity extends AppCompatActivity {
                 row.add("Empleado");
 
             row.add(users.getJSONObject(i).getJSONObject("store").getString("location"));
+            row.add("" + users.getJSONObject(i).getInt("pk"));
             items.add(row);
         }
 
@@ -94,7 +96,8 @@ public class AdminActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getApplicationContext(), EmployeeActivity.class);
                 try {
-                    intent.putExtra(getString(R.string.pk), position);
+                    Log.d(TAG, "" + id);
+                    intent.putExtra(getString(R.string.pk), (int)id);
                     startActivity(intent);
                 } catch (Exception e) {
                     e.printStackTrace();
