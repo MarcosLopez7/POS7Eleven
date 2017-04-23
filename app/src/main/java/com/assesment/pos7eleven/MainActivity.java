@@ -119,6 +119,10 @@ public class MainActivity extends AppCompatActivity {
         SessionHelper.first_name = userData.getString("first_name");
         SessionHelper.last_name = userData.getString("last_name");
         SessionHelper.staff_user = userData.getBoolean("is_staff");
+
+        if (!SessionHelper.admin) {
+              SessionHelper.store_id = userData.getInt("store");
+        }
     }
 
 }

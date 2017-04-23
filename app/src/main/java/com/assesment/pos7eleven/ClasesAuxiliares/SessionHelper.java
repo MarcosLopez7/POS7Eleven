@@ -16,6 +16,7 @@ public final class SessionHelper {
         last_name = "";
         id = -1;
         client = null;
+        store_id = 0;
     }
 
     public static int id;
@@ -24,5 +25,6 @@ public final class SessionHelper {
     public static String first_name;
     public static String last_name;
     public static boolean staff_user;
+    public static int store_id;
     public static OkHttpClient client;
 }

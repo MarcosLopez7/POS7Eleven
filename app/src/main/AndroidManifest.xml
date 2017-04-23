@@ -24,6 +24,10 @@
         <activity android:name=".CreateEmployeeActivity" />
         <activity android:name=".EmployeeActivity" />
         <activity android:name=".EditEmployeeActivity" />
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".SellActivity" />
+        <activity android:name=".ScanProductActivity" />
+        <activity android:name=".ProductViewActivity"></activity>
     </application>
 
 </manifest>
