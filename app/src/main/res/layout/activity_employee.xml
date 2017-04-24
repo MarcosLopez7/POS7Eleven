@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.assesment.pos7eleven.EmployeeActivity">
+    tools:context="com.assesment.pos7eleven.EmployeeActivity"
+    android:background="@color/background">
 
     <TextView
         android:layout_width="wrap_content"
@@ -13,7 +14,8 @@
         android:id="@+id/employeeID"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20sp"
-        android:textSize="25sp"/>
+        android:textSize="25sp"
+        android:textColor="@color/title"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -28,7 +30,8 @@
             android:layout_height="wrap_content"
             android:text="Nombre:"
             android:textSize="20sp"
-            android:id="@+id/nameText"/>
+            android:id="@+id/nameText"
+            android:textColor="@color/text"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -36,7 +39,8 @@
             android:text="Usuario:"
             android:textSize="20sp"
             android:layout_marginTop="40sp"
-            android:id="@+id/usernameText" />
+            android:id="@+id/usernameText"
+            android:textColor="@color/text"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -44,7 +48,8 @@
             android:text="Posición:"
             android:textSize="20sp"
             android:layout_marginTop="40sp"
-            android:id="@+id/positionText"/>
+            android:id="@+id/positionText"
+            android:textColor="@color/text"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -52,7 +57,8 @@
             android:text="Tienda:"
             android:textSize="20sp"
             android:layout_marginTop="40sp"
-            android:id="@+id/storeText"/>
+            android:id="@+id/storeText"
+            android:textColor="@color/text"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -60,7 +66,8 @@
             android:text="Activo:"
             android:textSize="20sp"
             android:layout_marginTop="40sp"
-            android:id="@+id/isActiveText"/>
+            android:id="@+id/isActiveText"
+            android:textColor="@color/text"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -71,14 +78,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Eliminar"
-                android:id="@+id/deleteEmployeeButton" />
+                android:id="@+id/deleteEmployeeButton"
+                android:background="@color/button"
+                android:textColor="@color/focus"/>
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Editar"
                 android:id="@+id/editEmployeeButton"
-                android:layout_marginLeft="60sp"/>
+                android:layout_marginLeft="60sp"
+                android:background="@color/button"
+                android:textColor="@color/background"/>
         </LinearLayout>
 
     </LinearLayout>

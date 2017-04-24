@@ -10,4 +10,9 @@
         <item>Gerente</item>
     </string-array>
     <string name="pk">pk</string>
+    <string-array name="payment_method">
+        <item>Cash</item>
+        <item>Debit Card</item>
+        <item>Credit Card</item>
+    </string-array>
 </resources>

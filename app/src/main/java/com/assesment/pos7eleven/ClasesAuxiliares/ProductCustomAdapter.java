@@ -43,12 +43,11 @@ public class ProductCustomAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View customView = View.inflate(context, R.layout.list_user, null);
+        View customView = View.inflate(context, R.layout.list_product, null);
 
         TextView productNameText = (TextView) customView.findViewById(R.id.productTVLU);
         TextView priceText = (TextView) customView.findViewById(R.id.priceTVLU);
         TextView quantityText = (TextView) customView.findViewById(R.id.quantityTVLU);
-        Button deleteButton = (Button) customView.findViewById(R.id.deleteProductButton);
 
         productNameText.setText(products.get(position).get(0));
         priceText.setText(products.get(position).get(1));

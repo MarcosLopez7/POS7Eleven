@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.assesment.pos7eleven.ScanProductActivity">
+    tools:context="com.assesment.pos7eleven.ScanProductActivity"
+    android:background="@color/background">
 
     <TextView
         android:layout_width="wrap_content"
@@ -12,13 +13,16 @@
         android:text="Product View"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="70sp"
-        android:textSize="25sp"/>
+        android:textSize="25sp"
+        android:textColor="@color/title"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="Scan Product"/>
+        android:text="Scan Product"
+        android:background="@color/button"
+        android:textColor="@color/background"/>
 
 </RelativeLayout>

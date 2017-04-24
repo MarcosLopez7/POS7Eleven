@@ -16,6 +16,7 @@ public class HomeActivity extends AppCompatActivity {
     private Button registerButton;
     private Button sellButton;
     private Button productButton;
+    private Button trendButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +28,12 @@ public class HomeActivity extends AppCompatActivity {
         registerButton = (Button) findViewById(R.id.registerButton);
         sellButton = (Button) findViewById(R.id.sellButton);
         productButton = (Button) findViewById(R.id.productButton);
+        trendButton = (Button) findViewById(R.id.trendsButton);
 
         nameText.setText(SessionHelper.first_name + " " + SessionHelper.last_name);
+
+        if (SessionHelper.staff_user)
+            trendButton.setVisibility(View.VISIBLE);
 
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,6 +55,14 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+            }
+        });
+
+        trendButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), TrendActivity.class);
+                startActivity(intent);
             }
         });
     }

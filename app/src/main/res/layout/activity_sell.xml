@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.assesment.pos7eleven.SellActivity">
+    tools:context="com.assesment.pos7eleven.SellActivity"
+    android:background="@color/background">
 
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -27,22 +19,68 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20sp"
                     android:layout_marginTop="15sp"
-                    android:textSize="25sp"/>
-
+                    android:textSize="25sp"
+                    android:textColor="@color/title"/>
                 <Button
                     android:id="@+id/scanSellProduct"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="150sp"
+                    android:layout_marginLeft="50sp"
                     android:layout_marginTop="10sp"
-                    android:text="Scan Product"/>
+                    android:text="Scan Product"
+                    android:background="@color/button"
+                    android:textColor="@color/title"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20sp"
+                    android:layout_marginRight="20sp"
+                    android:layout_marginTop="10sp"
+                    android:text="PAYMENT"
+                    android:id="@+id/paymentButton"
+                    android:background="@color/button"
+                    android:textColor="@color/background"/>
 
             </LinearLayout>
-        <FrameLayout
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="65sp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Price: $"
+            android:layout_marginLeft="20sp"
+            android:textSize="15sp"
+            android:textColor="@color/text"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$Price"
+            android:layout_marginLeft="5sp"
+            android:textSize="15sp"
+            android:id="@+id/totalPriceText"
+            android:textColor="@color/text"/>
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:isScrollContainer="false"
+            android:layout_marginLeft="20sp"
+            android:id="@+id/methodPaySpinner"/>
+
+    </LinearLayout>
+
+    <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/frameLayout"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="100sp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -55,20 +93,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/listViewProductSell"
-                android:layout_gravity="left|top"
                 android:layout_marginTop="24dp"
                 android:paddingLeft="20sp"
                 android:paddingRight="20sp"/>
         </FrameLayout>
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20sp"
-            android:layout_marginRight="20sp"
-            android:text="PAYMENT"
-            android:layout_marginTop="20sp"/>
-        </LinearLayout>
-    </RelativeLayout>
 
-</ScrollView>
+</RelativeLayout>
